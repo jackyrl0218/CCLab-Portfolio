@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Yuan's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes buttonHover {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            color: #e74c3c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e74c3c;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project-button {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #ecf0f1;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .project-button:hover {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            animation: buttonHover 0.5s ease-in-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        footer p {
+            margin: 0;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jack Yuan's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reflection.html">Reflection</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to My Portfolio</h2>
+            <p>This portfolio showcases all the work I completed this semester in Critical Computation Lab. Explore the pages to learn more about each project and my reflections on this journey.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <a href="https://editor.p5js.org/jackyrl0218/full/lRu1uIBeZ" class="project-button" target="_blank">Project 1</a>
+            <a href="https://editor.p5js.org/jackyrl0218/full/Co4Nm0xbq" class="project-button" target="_blank">Project 2</a>
+            <a href="https://editor.p5js.org/jackyrl0218/full/snYgZ81jT" class="project-button" target="_blank">Project 3</a>
+            <a href="https://editor.p5js.org/jackyrl0218/full/iSytG2Qhi" class="project-button" target="_blank">Project 4</a>
+            <a href="https://editor.p5js.org/jackyrl0218/full/fnOWxCRsq" class="project-button" target="_blank">Project 5</a>
+            <a href="https://editor.p5js.org/jackyrl0218/full/CJA7peipl" class="project-button" target="_blank">Project 6</a>
+            <a href="https://editor.p5js.org/jackyrl0218/full/H9Ymg-POb" class="project-button" target="_blank">Project 7</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jack Yuan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
