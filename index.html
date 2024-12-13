@@ -3,68 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack Yuan's Portfolio</title>
+    <title>Critical Computation Lab Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes buttonHover {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: #ecf0f1;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a57);
+            color: #fff;
         }
 
         header {
-            background: linear-gradient(135deg, #34495e, #2c3e50);
+            background-color: #272741;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1s ease-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         }
 
         header h1 {
+            font-size: 2.5em;
             margin: 0;
-            font-size: 2.8em;
-            color: #e74c3c;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            color: #f5f5f5;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
             display: flex;
             justify-content: center;
-            gap: 20px;
-            animation: fadeIn 1s ease-out;
+            margin: 10px 0 0;
         }
 
-        nav a {
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
             text-decoration: none;
-            color: #ecf0f1;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
+            color: #c9c9e7;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #e74c3c;
+        nav ul li a:hover {
+            color: #f7cc70;
         }
 
         main {
             padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            animation: fadeIn 1s ease-out;
         }
 
         section {
@@ -72,55 +61,67 @@
         }
 
         section h2 {
-            font-size: 2em;
-            border-bottom: 2px solid #e74c3c;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
             text-align: center;
+            font-size: 2em;
+            color: #f7cc70;
+            margin-bottom: 20px;
         }
 
-        .project-button {
-            display: inline-block;
-            margin: 15px;
-            padding: 15px 25px;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: #ecf0f1;
-            text-decoration: none;
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #fff;
             border-radius: 10px;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            animation: fadeIn 1s ease-out;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .project-button:hover {
-            background: linear-gradient(135deg, #c0392b, #e74c3c);
-            animation: buttonHover 0.5s ease-in-out;
+        iframe:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
         }
 
         footer {
+            background-color: #272741;
             text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            margin-top: 40px;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1s ease-out;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #c9c9e7;
         }
 
         footer p {
             margin: 0;
-            color: #ecf0f1;
         }
+
+        /* Button effects */
+        .nav-button {
+            background-color: #3a3a57;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #f5f5f5;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #f7cc70;
+            color: #1e1e2f;
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Jack Yuan's Portfolio</h1>
+        <h1>Jack Yuan's CCLab Portfolio</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="reflection.html">Reflection</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="about.html" class="nav-button">About</a></li>
+                <li><a href="reflection.html" class="nav-button">Reflection</a></li>
+                <!-- Add more projects as needed -->
             </ul>
         </nav>
     </header>
@@ -131,18 +132,74 @@
             <p>This portfolio showcases all the work I completed this semester in Critical Computation Lab. Explore the pages to learn more about each project and my reflections on this journey.</p>
         </section>
 
-        <section id="projects">
+        <!-- Embedded Projects -->
+        <section>
             <h2>My Projects</h2>
-            <a href="https://editor.p5js.org/jackyrl0218/full/lRu1uIBeZ" class="project-button" target="_blank">Project 1</a>
-            <a href="https://editor.p5js.org/jackyrl0218/full/Co4Nm0xbq" class="project-button" target="_blank">Project 2</a>
-            <a href="https://editor.p5js.org/jackyrl0218/full/snYgZ81jT" class="project-button" target="_blank">Project 3</a>
-            <a href="https://editor.p5js.org/jackyrl0218/full/iSytG2Qhi" class="project-button" target="_blank">Project 4</a>
-            <a href="https://editor.p5js.org/jackyrl0218/full/fnOWxCRsq" class="project-button" target="_blank">Project 5</a>
-            <a href="https://editor.p5js.org/jackyrl0218/full/CJA7peipl" class="project-button" target="_blank">Project 6</a>
-            <a href="https://editor.p5js.org/jackyrl0218/full/H9Ymg-POb" class="project-button" target="_blank">Project 7</a>
+            <iframe src="https://editor.p5js.org/jackyrl0218/full/lRu1uIBeZ" width="90%" height="400"></iframe>
+         
+            <iframe src="https://editor.p5js.org/jackyrl0218/full/snYgZ81jT" width="90%" height="400"></iframe>
+            <iframe src="https://editor.p5js.org/jackyrl0218/full/iSytG2Qhi" width="90%" height="400"></iframe>
+            <iframe src="https://editor.p5js.org/jackyrl0218/full/fnOWxCRsq" width="90%" height="400"></iframe>
+            <iframe src="https://editor.p5js.org/jackyrl0218/full/CJA7peipl" width="90%" height="400"></iframe>
+            <iframe src="https://editor.p5js.org/jackyrl0218/full/H9Ymg-POb" width="90%" height="400"></iframe>
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2024 Jack Yuan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- About Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Jack Yuan</h2>
+            <p>Hi, I'm Jack Yuan, a creative enthusiast passionate about technology and design. I'm currently exploring the intersection of art and computation, developing projects that inspire and engage audiences. My journey began with a love for visual storytelling and evolved into a fascination with how code can bring ideas to life. Whether it's experimenting with interactive sketches or designing user experiences, I aim to merge creativity with functionality.</p>
+            <p>When I'm not coding, you'll find me exploring new design trends, hiking with family, or experimenting with culinary arts. I also have a deep appreciation for large-scale installations and immersive art, which fuels my vision of creating meaningful, tech-driven experiences.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Jack Yuan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- Reflection Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Reflection</h1>
+    </header>
+    <main>
+        <section>
+            <h2>What I Learned</h2>
+            <p>Over the course of this semester, I gained a deeper understanding of how technology and creativity can converge to create impactful work. From developing interactive p5.js sketches to styling portfolio websites, each project challenged me to think critically about design and functionality. I've learned not only the technical skills but also the importance of iteration and feedback in the creative process.</p>
+            <h2>Challenges and Growth</h2>
+            <p>One of the biggest challenges I faced was integrating complex interactions into my projects. Debugging code and refining user experiences required patience and persistence, but the results were incredibly rewarding. This experience taught me the value of problem-solving and resilience in creative computation.</p>
+            <h2>Future Goals</h2>
+            <p>Moving forward, I aim to further develop my skills in creative coding, with a particular focus on virtual and augmented reality. I aspire to design immersive experiences that blend art, technology, and storytelling. This class has been an inspiring stepping stone toward achieving those goals.</p>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Jack Yuan. All rights reserved.</p>
     </footer>
